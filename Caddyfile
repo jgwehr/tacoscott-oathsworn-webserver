@@ -1,0 +1,46 @@
+{ # Global options block. Entirely optional, https is on by default
+  #debug # this is optional; makes Caddy log more details
+}
+
+############
+# Snippets #
+############
+
+(main) {
+  respond /robots.txt 200 {
+    body "User-agent: *
+    Disallow: /
+    
+    User-agent: AdsBot-Google
+    Disallow: /
+
+    User-agent: AdsBot-Google-Mobile
+    Disallow: /"
+
+    close
+  }
+}
+
+(internal-only) {
+	@external not remote_ip private_ranges
+
+	abort @external
+}
+
+
+
+############
+# Routing  #
+############
+
+localhost {
+  import main
+  import internal-only
+
+  respond "hello world"
+
+  handle_path /* {
+	root * /www/oathsworn
+	file_server
+	}
+}

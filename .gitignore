@@ -1,0 +1,7 @@
+*.env
+*.properties
+*.crt
+*.log
+*.passwords
+/config
+secrets.yaml

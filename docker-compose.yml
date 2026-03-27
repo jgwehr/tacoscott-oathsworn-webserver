@@ -1,0 +1,21 @@
+name: "oathpub"
+
+services:
+
+####################
+# Reverse Proxy
+####################
+
+  oathpub:
+    container_name: oathpub
+    image: caddy
+
+    ports:
+      - 8089:80
+
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro # Required. Needs to be an extension-less file NOT a directory
+      - /opt/docker/oathsworn:/www/oathsworn # replace this with the directory where [index.html] was generated
+
+    healthcheck:
+      test: ["CMD", "caddy", "version"]
