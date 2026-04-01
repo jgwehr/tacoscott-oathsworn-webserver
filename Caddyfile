@@ -33,7 +33,7 @@
 # Routing  #
 ############
 
-localhost {
+http://${LOCALHOST} {
   import main
   import internal-only
 

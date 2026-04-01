@@ -10,8 +10,13 @@ services:
     container_name: oathpub
     image: caddy
 
+
+    # you'll access the app at "http://{LOCALHOST}:PORT_OATHSWORN" eg. http://192.168.1.2:8096
     ports:
-      - 8089:80
+      - ${PORT_OATHSWORN:-8090}:80
+
+    environment:
+      LOCALHOST: ${LOCALHOST:-192.168.1.2}
 
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro # Required. Needs to be an extension-less file NOT a directory
