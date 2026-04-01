@@ -1,6 +1,6 @@
 # tacoscott-oathsworn-webserver
 ## What is this?
-A simple example of using a reverse proxy to make this Oathsworn Web App available over your network
+A simple example of using a reverse proxy to make the [Oathsworn Web App](https://github.com/TheTacoScott/oathsworn-webapp) available over your network
 
 ## Who is this for?
 If you're familiar with Docker or already use a reverse proxy, this is a way of exposing the "flat" output of this (great) work as a web app. If you're not familiar, it's a simple example you can use for inspiration / education. 
