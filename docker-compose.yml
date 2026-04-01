@@ -20,7 +20,7 @@ services:
 
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro # Required. Needs to be an extension-less file NOT a directory
-      - /opt/docker/oathsworn:/www/oathsworn # replace this with the directory where [index.html] was generated
+      - ${DIR_OATHSWORN_WEBAPP}:/www/oathsworn # replace this with the directory where [index.html] was generated
 
     healthcheck:
       test: ["CMD", "caddy", "version"]
