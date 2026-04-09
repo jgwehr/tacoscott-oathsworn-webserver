@@ -1,3 +1,8 @@
+This work is now incorporated in the parent project: https://github.com/TheTacoScott/oathsworn-webapp/releases/tag/v2.1.0
+
+
+
+
 # tacoscott-oathsworn-webserver
 ## What is this?
 A simple example of using a reverse proxy to make the [Oathsworn Web App](https://github.com/TheTacoScott/oathsworn-webapp) available over your network
